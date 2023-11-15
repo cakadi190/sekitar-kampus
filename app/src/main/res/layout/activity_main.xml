@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="12sp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/welcomeTextHeader"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="2sp"
+                android:fontFamily="@font/inter_700"
+                android:text="@string/welcome_heading"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/welcomeTextSubHeader"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.65"
+                android:fontFamily="@font/inter_400"
+                android:text="@string/welcome_subheading"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="2"
+            android:verticalSpacing="8dp"
+            android:clipToPadding="false"
+            android:horizontalSpacing="8dp"
+            android:rowCount="2"
+            android:layout_gravity="center">
+
+            <!-- Button 1 -->
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_height="wrap_content"
+                android:text="Button 1" />
+
+            <!-- Button 2 -->
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_height="wrap_content"
+                android:text="Button 2" />
+
+            <!-- Button 3 -->
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_height="wrap_content"
+                android:text="Button 3" />
+
+            <!-- Button 4 -->
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_height="wrap_content"
+                android:text="Button 4" />
+
+            <!-- Add more buttons as needed -->
+
+        </GridLayout>
+    </LinearLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>

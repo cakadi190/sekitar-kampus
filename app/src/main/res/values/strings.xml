@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Sekitar Kampus</string>
+    <string name="author_name">Kelompok 11</string>
+
+    <!-- Image Alternate -->
+    <string name="image_alt_logo">Logo Seputar Kampus</string>
+
+    <string name="loading_text">Sedang Memuat</string>
+    <string name="welcome_subheading">Silahkan pilih menu dibawah ini untuk melanjutkan.</string>
+    <string name="welcome_heading">Selamat Datang</string>
+</resources>

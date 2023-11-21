@@ -13,48 +13,67 @@
         android:contentDescription="@string/image_alt_logo"
         android:src="@drawable/sekitar_kampus_white"
         app:layout_constraintBottom_toTopOf="@+id/footer"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageLogo"
+        app:trackThickness="3dp" />
 
     <LinearLayout
         android:id="@+id/footer"
         android:layout_width="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="64dp"
         android:gravity="center_horizontal"
-        android:layout_height="56dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextSizeCheck">
 
         <TextView
             android:id="@+id/loadingText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_700"
             android:text="@string/loading_text"
             android:textAlignment="center"
-            android:fontFamily="@font/inter_700"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="18sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/versionText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="2dp"
+                android:alpha="0.75"
+                android:fontFamily="@font/inter_400"
                 android:text="1.0.0"
                 android:textAlignment="center"
-                android:fontFamily="@font/inter_700"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                tools:ignore="HardcodedText" />
+
             <TextView
                 android:id="@+id/authorText"
-                android:layout_marginStart="2dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:alpha="0.75"
+                android:fontFamily="@font/inter_400"
                 android:text="@string/author_name"
                 android:textAlignment="center"
-                android:fontFamily="@font/inter_700"
                 android:textColor="@color/white" />
         </LinearLayout>
     </LinearLayout>

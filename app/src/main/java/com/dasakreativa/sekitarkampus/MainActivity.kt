@@ -1,14 +1,11 @@
 package com.dasakreativa.sekitarkampus
 
+import ImagePromoAdapter
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager2.widget.ViewPager2
-import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
-import com.dasakreativa.sekitarkampus.recyclers.ImagePromoAdapter
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var viewPager2: ViewPager2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,35 +13,17 @@ class MainActivity : AppCompatActivity() {
 
         // Showing the promo sliders
         val images = intArrayOf(
-            R.drawable.promo_banner_default,
-            R.drawable.promo_banner_default,
-            R.drawable.promo_banner_default,
-            R.drawable.promo_banner_default,
-            R.drawable.promo_banner_default
+            R.drawable.sekitar_kampus_color,
+            R.drawable.sekitar_kampus_color,
+            R.drawable.sekitar_kampus_color,
+            R.drawable.sekitar_kampus_color,
+            R.drawable.sekitar_kampus_color
         );
         promoImage(images)
     }
 
     private fun promoImage(images: IntArray) {
-        viewPager2 = findViewById(R.id.viewpager)
-
-        val viewPager2Adapter = ImagePromoAdapter(this, images)
-
-        with(viewPager2) {
-            adapter = viewPager2Adapter
-            registerOnPageChangeCallback(object : OnPageChangeCallback() {
-                override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-                    super.onPageScrolled(position, positionOffset, positionOffsetPixels)
-                }
-
-                override fun onPageSelected(position: Int) {
-                    super.onPageSelected(position)
-                }
-
-                override fun onPageScrollStateChanged(state: Int) {
-                    super.onPageScrollStateChanged(state)
-                }
-            })
-        }
+        val imageAdapter = ImagePromoAdapter(images);
+        findViewById<RecyclerView>(R.id.imagePromoSlider).adapter = imageAdapter;
     }
 }

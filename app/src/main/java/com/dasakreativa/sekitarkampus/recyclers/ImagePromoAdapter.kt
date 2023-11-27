@@ -1,6 +1,3 @@
-package com.dasakreativa.sekitarkampus.recyclers
-
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,57 +5,30 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.dasakreativa.sekitarkampus.R
 
-/**
- * Adapter for displaying a list of images in a RecyclerView.
- *
- * @param ctx The context.
- * @param images An array of resource IDs representing the images to be displayed.
- */
-internal class ImagePromoAdapter(private val ctx: Context, private val images: IntArray) :
-    RecyclerView.Adapter<ImagePromoAdapter.ViewHolder>() {
-
-    /**
-     * Creates and returns a ViewHolder for the view.
-     *
-     * @param parent The parent view group.
-     * @param viewType The type of the view.
-     * @return A ViewHolder for the view.
-     */
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view: View = LayoutInflater.from(ctx).inflate(R.layout.images_holder, parent, false)
-        return ViewHolder(view)
+class ImagePromoAdapter(// Replace Integer with your actual data type
+    private val imageList: IntArray
+) :
+    RecyclerView.Adapter<ImagePromoAdapter.ImageViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
+        val context = parent.context
+        val view: View = LayoutInflater.from(context).inflate(R.layout.images_holder, parent, false)
+        return ImageViewHolder(view)
     }
 
-    /**
-     * Binds the data to the ViewHolder.
-     *
-     * @param holder The ViewHolder to bind the data to.
-     * @param position The position of the item in the data set.
-     */
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        // Set the images in ImageView
-        holder.images.setImageResource(images[position])
+    override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
+        val imageResId = imageList[position]
+        holder.imageView.setImageResource(imageResId)
     }
 
-    /**
-     * Gets the number of items in the data set.
-     *
-     * @return The number of items in the data set.
-     */
     override fun getItemCount(): Int {
-        return images.size
+        return imageList.size
     }
 
-    /**
-     * ViewHolder class for holding the view components.
-     *
-     * @param itemView The view for the ViewHolder.
-     */
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var images: ImageView
+    class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var imageView: ImageView
 
         init {
-            images = itemView.findViewById(R.id.images)
+            imageView = itemView.findViewById<ImageView>(R.id.imageView)
         }
     }
 }

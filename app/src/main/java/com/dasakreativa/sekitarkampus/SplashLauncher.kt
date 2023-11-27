@@ -17,7 +17,8 @@ class SplashLauncher : AppCompatActivity() {
     }
 
     /**
-     * Redirect to main activity (MainActivity.kt
+     * Redirect to main activity (MainActivity.kt)
+     * @see MainActivity
      */
     private fun loadingToMain() {
         val intent = Intent(this, MainActivity::class.java)

@@ -47,45 +47,134 @@
             android:columnCount="2"
             android:verticalSpacing="8dp"
             android:clipToPadding="false"
+            android:useDefaultMargins="true"
             android:horizontalSpacing="8dp"
             android:rowCount="2"
             android:layout_gravity="center">
 
-            <!-- Button 1 -->
-            <Button
-                android:id="@+id/button1"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/indekostCard"
                 android:layout_width="0dp"
+                android:layout_height="100dp"
                 android:layout_columnWeight="1"
-                android:layout_height="wrap_content"
-                android:text="Button 1" />
+                app:cardCornerRadius="8sp"
+                app:cardElevation="0sp">
 
-            <!-- Button 2 -->
-            <Button
-                android:id="@+id/button2"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start|bottom"
+                    android:background="@drawable/indekost_image"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8sp"
+                        android:layout_marginBottom="8sp"
+                        android:background="#00FFFFFF"
+                        android:fontFamily="@font/inter_700"
+                        android:text="Indekos"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/restaurantCard"
                 android:layout_width="0dp"
+                android:layout_height="100dp"
                 android:layout_columnWeight="1"
-                android:layout_height="wrap_content"
-                android:text="Button 2" />
+                app:cardCornerRadius="8sp"
+                app:cardElevation="0sp">
 
-            <!-- Button 3 -->
-            <Button
-                android:id="@+id/button3"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start|bottom"
+                    android:background="@drawable/restaurant_image"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8sp"
+                        android:layout_marginBottom="8sp"
+                        android:background="#00FFFFFF"
+                        android:fontFamily="@font/inter_700"
+                        android:text="Depot Makan"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/atmCard"
                 android:layout_width="0dp"
+                android:layout_height="100dp"
                 android:layout_columnWeight="1"
-                android:layout_height="wrap_content"
-                android:text="Button 3" />
+                app:cardCornerRadius="8sp"
+                app:cardElevation="0sp">
 
-            <!-- Button 4 -->
-            <Button
-                android:id="@+id/button4"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start|bottom"
+                    android:background="@drawable/atm_image"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8sp"
+                        android:layout_marginBottom="8sp"
+                        android:background="#00FFFFFF"
+                        android:fontFamily="@font/inter_700"
+                        android:text="ATM Center"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/coffeeShopCard"
                 android:layout_width="0dp"
+                android:layout_height="100dp"
                 android:layout_columnWeight="1"
-                android:layout_height="wrap_content"
-                android:text="Button 4" />
+                app:cardCornerRadius="8sp"
+                app:cardElevation="0sp">
 
-            <!-- Add more buttons as needed -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start|bottom"
+                    android:background="@drawable/coffee_shop_image"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8sp"
+                        android:layout_marginBottom="8sp"
+                        android:background="#00FFFFFF"
+                        android:fontFamily="@font/inter_700"
+                        android:text="Coffee Shop"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
         </GridLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpager"
+            android:layout_marginTop="16.00dp"
+            android:layout_width="match_parent"
+            android:layout_height="150.00dp" />
     </LinearLayout>
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
